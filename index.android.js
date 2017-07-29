@@ -61,6 +61,15 @@ class AppApp extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <TouchableHighlight ref='button' style={styles.button} onPress={this.showPopover}>
+          <Text style={styles.buttonText}>Press me</Text>
+        </TouchableHighlight>
+        <Popover.default
+          isVisible={this.state.isVisible}
+          fromRect={this.state.buttonRect}
+          onClose={this.closePopover}>
+          <Text>I'm the content of this popover!. I'm the content of this popover!. I'm the content of this popover!</Text>
+        </Popover.default>
       </View>
     );
   }
